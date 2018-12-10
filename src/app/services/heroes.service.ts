@@ -61,6 +61,20 @@ export class HeroesService {
         return this.heroes;
     }
 
+    buscarHeroe(busqueda:string){
+      let buscarH:Heroe[]= [];
+      busqueda = busqueda.toLowerCase();
+
+      this.heroes.forEach(heroe => {
+        if(heroe.nombre.toLowerCase().includes(busqueda)){
+         
+          buscarH.push(heroe);
+        }
+      });
+    
+     return buscarH;
+    }
+
 }
         export interface Heroe{
             nombre: string;
