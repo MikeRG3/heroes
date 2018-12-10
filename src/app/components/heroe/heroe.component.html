@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-between align-items-center animated fadeIn">
+        <h1 class="col-6 text-primary">{{heroe.nombre | uppercase}} <small class="text-dark">  {{heroe.aparicion | date:"yyyy" }}</small></h1>
+        <img class="img img-fluid" style="width:10%;height: 10%;" *ngIf="heroe.casa=='DC'" src="assets/img/dc.png" [alt]="">
+        <img class="img img-fluid" style="width:10%;height: 10%;" *ngIf="heroe.casa!='DC'" src="assets/img/marvel.png" [alt]="">
+    </div>
+    <hr>
+    <div class="row justify-content-around align-items-center slow fadeIn">
+        <img [src]="heroe.img" [alt]="heroe.nombre" class="col-6 img-fluid">
+        <div class="col-4">
+            <h2 class="mb-2 ">Descripción</h2>
+            <hr>
+            <p> {{ heroe.bio }}</p>
+            <button class="btn btn-outline-danger btn-block" [routerLink]="[ '/heroes' ]">Volver</button>
+        </div>
+
+    </div>
+</div>
