@@ -10,6 +10,7 @@ import { HeroesService,Heroe } from '../../services/heroes.service';
 })
 export class BusquedaComponent implements OnInit {
   heroes:Heroe[] =[];
+  busqueda:string;
   constructor(private activatedRoute:ActivatedRoute, private _heroesService:HeroesService,private router:Router) { 
     
     
@@ -17,7 +18,8 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe( params=>{
-     
+      this.busqueda = params['heroe'];
+      console.log(this.heroes.length);
       this.heroes=this._heroesService.buscarHeroe(params['heroe']);
     });
   }

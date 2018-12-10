@@ -1,5 +1,5 @@
 <h1 class="fast fadeIn">
-    Héroes <small>Marvel y DC</small>
+    Buscar: <small>"{{busqueda}}"</small>
 </h1>
 <hr>
 
@@ -18,4 +18,8 @@
     </div>
 
 
+</div>
+
+<div *ngIf="heroes.length==0" class="alert alert-danger" role="alert">
+    No se encontraron resultados para su búsqueda.
 </div>
